@@ -797,6 +797,111 @@
         }
         .platform-fv { background: rgba(26,182,93,0.12); color: #1ab65d; }
         .platform-uw { background: rgba(20,133,89,0.12); color: #14ab6a; }
+        .platform-acad { background: rgba(127,179,204,0.15); color: #7fb3cc; }
+
+        /* ── Featured review ── */
+        .featured-review {
+            border: 1px solid rgba(230,57,70,0.25);
+            border-radius: 10px;
+            padding: 2rem 2.25rem;
+            margin-bottom: 2rem;
+            background: rgba(230,57,70,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-review::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-2), transparent);
+        }
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-2);
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 0.65rem;
+            border: 1px solid rgba(230,57,70,0.3);
+            border-radius: 2px;
+            background: rgba(230,57,70,0.06);
+        }
+        .featured-review-body {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .featured-avatar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+        .featured-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 2px solid rgba(230,57,70,0.3);
+        }
+        .featured-name {
+            font-family: var(--display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--hero-text);
+            text-align: center;
+            line-height: 1.3;
+            max-width: 80px;
+        }
+        .featured-title {
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            color: var(--accent-3);
+            text-align: center;
+            letter-spacing: 0.03em;
+            line-height: 1.4;
+        }
+        .featured-quote-wrap {}
+        .featured-quote {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            font-style: italic;
+            border-left: 2px solid var(--accent-2);
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .featured-quote .quote-highlight {
+            color: rgba(255,255,255,0.95);
+            font-style: normal;
+            font-weight: 500;
+        }
+        .featured-review-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .featured-org {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.04em;
+        }
+        @media (max-width: 600px) {
+            .featured-review-body { grid-template-columns: 1fr; }
+            .featured-avatar-wrap { flex-direction: row; align-items: center; gap: 1rem; }
+            .featured-name, .featured-title { text-align: left; max-width: none; }
+        }
         .testimonial-quote {
             font-size: 0.95rem;
             color: rgba(255,255,255,0.65);
@@ -1589,138 +1694,84 @@
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
-    <div class="section-label" data-num="06">Client Reviews</div>
-    <h2>What clients<br>are saying</h2>
+    <div class="section-label" data-num="06">Social Proof</div>
+    <h2>Client reviews</h2>
     <div class="platform-badges">
         <div class="platform-badge">
-            <div class="platform-badge-icon">↑W</div>
+            <span class="platform-badge-icon">5✦</span>
             <div class="platform-badge-info">
-                <div class="platform-badge-score">100%</div>
-                <div class="platform-badge-label">Job Success · Upwork</div>
+                <span class="platform-badge-score">5.0</span>
+                <span class="platform-badge-label">Fiverr</span>
             </div>
         </div>
         <div class="platform-badge">
-            <div class="platform-badge-icon">5✦</div>
+            <span class="platform-badge-icon">↑W</span>
             <div class="platform-badge-info">
-                <div class="platform-badge-score">5.0 ★</div>
-                <div class="platform-badge-label">Rating (5 reviews) · Fiverr</div>
-            </div>
-        </div>
-        <div class="platform-badge">
-            <div class="platform-badge-icon">⚡</div>
-            <div class="platform-badge-info">
-                <div class="platform-badge-score">0–4 hrs</div>
-                <div class="platform-badge-label">Avg. Response Time</div>
+                <span class="platform-badge-score">100%</span>
+                <span class="platform-badge-label">Job Success</span>
             </div>
         </div>
     </div>
+    <!-- FEATURED REVIEW -->
+    <div class="featured-review reveal">
+        <div class="featured-badge">★ Featured Recommendation</div>
+        <div class="featured-review-body">
+            <div class="featured-avatar-wrap">
+                <img src="images/nicholas-cifuentes.jpeg" alt="Prof. Nicholas Cifuentes-Goodbody" class="featured-avatar">
+                <div class="featured-name">Nicholas Cifuentes-Goodbody</div>
+                <div class="featured-title">Chief Data Scientist<br>WorldQuant University, USA</div>
+            </div>
+            <div class="featured-quote-wrap">
+                <p class="featured-quote">
+                    Ahmed is a <span class="quote-highlight">skilled engineer, a diligent worker, and an enthusiastic collaborator.</span> I would recommend him without reservation for any job in the machine learning or AI space.<br><br>
+                    I worked with Ahmed in 2024 remotely to assist me in building a course on computer vision for WorldQuant University. Ahmed took the lead in writing all of the code for student lessons and projects using <span class="quote-highlight">PyTorch, Hugging Face, and other essential tools for computer vision.</span> He meshed into our existing team and tech stack without any issues. His work was always high-quality, on time, and on budget. He was always gracious in taking feedback and incorporating changes. <span class="quote-highlight">Thanks to his work, this course now enrolls thousands of students from around the world every year.</span><br><br>
+                    I enthusiastically recommend Ahmed for any job in <span class="quote-highlight">data science, NLP, ML engineering, and AI engineering.</span> He would be an excellent addition to any team.
+                </p>
+                <div class="featured-review-footer">
+                    <span class="featured-org">🇺🇸 WorldQuant University, USA · 2024</span>
+                    <span class="testimonial-platform platform-acad" style="margin-left:0;">Academic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="testimonials-grid reveal">
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(100,180,120,0.15);color:#4caf7d;">D</div>
+                <div class="testimonial-avatar" style="background:rgba(127,179,204,0.15);color:#7fb3cc;">M</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">dimitri_bala</span>
-                    <span class="testimonial-origin">🇨🇭 Switzerland</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Perfect seller. Does what he said, is available, goes in depth in the subject to give best results. Communication was great and I plan to do more business with Ahmed since he is really professional. I Highly recommend this seller."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(80,160,220,0.15);color:#64b5f6;">A</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">artificial666</span>
-                    <span class="testimonial-origin">🇬🇭 Ghana</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Very incredible programmer. He delivered to my expectations. Would get back to order again."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(230,57,70,0.15);color:#e63946;">S</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">sistem713</span>
-                    <span class="testimonial-origin">🇺🇸 United States · Repeat Client</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Excellent work." — returned for multiple AI chatbot and software projects.
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(255,200,80,0.15);color:#ffc44d;">E</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">Enterprise Client (aico-2023-1)</span>
-                    <span class="testimonial-origin">Upwork Enterprise · 4.8 ★</span>
+                    <span class="testimonial-name">mwanakombo1</span>
+                    <span class="testimonial-origin">🇹🇿 Tanzania · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed was helpful, collaborative, and dedicated. Sometimes he got a little lost in the weeds, and I chalk that up to the depth of care in solving the problem."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★☆</span> <span style="font-family:var(--mono);font-size:0.65rem;color:rgba(255,255,255,0.3);margin-left:4px;">4.8</span></div>
+            <p class="testimonial-quote">"Ahmed is very good at his work. He is precise and careful in his work, and takes his time to ensure everything is done correctly. I would hire again!"</p>
+            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(120,200,160,0.15);color:#80cbc4;">C</div>
+                <div class="testimonial-avatar" style="background:rgba(230,57,70,0.12);color:#ef9a9a;">A</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">AWS Client</span>
-                    <span class="testimonial-origin">Upwork · Web App / AWS Project</span>
+                    <span class="testimonial-name">ahmedsalim880</span>
+                    <span class="testimonial-origin">🇸🇦 Saudi Arabia · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed did a great job on performing various web app development-related coding tasks on Amazon Web Services. We'd be happy to work with this freelancer again."
-            </p>
+            <p class="testimonial-quote">"He is a professional person, highly experienced, knows what he is doing, great communication skills, and an exceptional programmer. I would highly recommend him."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(200,140,220,0.15);color:#ce93d8;">P</div>
+                <div class="testimonial-avatar" style="background:rgba(34,197,94,0.12);color:#86efac;">K</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">Python Dash Client</span>
-                    <span class="testimonial-origin">Upwork · Data Visualization Project</span>
+                    <span class="testimonial-name">kw_ml_team</span>
+                    <span class="testimonial-origin">🇰🇼 Kuwait · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed was great, extremely helpful, and patient. He is well-versed in Python pandas and understands modeling. He went over and beyond what I needed."
-            </p>
+            <p class="testimonial-quote">"I hired Ahmed for Computer Vision / Data Science / Deep Learning. He is an expert in his skills. Highly Recommended."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(100,160,230,0.15);color:#90caf9;">A</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">Arbab R. | CEO</span>
-                    <span class="testimonial-origin">Upwork · Machine Learning · Dec 2022 · Verified</span>
-                </div>
-                <span class="testimonial-platform platform-uw">Upwork</span>
-            </div>
-            <p class="testimonial-quote">
-                "I hired Ahmed for Computer Vision / Data Science / Deep Learning. He is an expert in his skills. Highly Recommended."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
                 <div class="testimonial-avatar" style="background:rgba(230,57,70,0.12);color:#ef9a9a;">F</div>
@@ -1730,15 +1781,11 @@
                 </div>
                 <span class="testimonial-platform platform-fv">Fiverr</span>
             </div>
-            <p class="testimonial-quote">
-                "Perfect seller! Thank you for helping me out. Highly recommend."
-            </p>
+            <p class="testimonial-quote">"Perfect seller! Thank you for helping me out. Highly recommend."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
     </div>
 </section>
-
 
 <!-- CONTACT -->
 <section id="contact">
