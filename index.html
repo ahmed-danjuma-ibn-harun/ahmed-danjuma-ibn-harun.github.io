@@ -22,7 +22,6 @@
             --accent-2: #e63946;
             --accent-3: #7fb3cc;
             --accent-glow: #a8dadc;
-            /* dark hero palette */
             --hero-bg: #0d0f14;
             --hero-surface: #13161d;
             --hero-border: rgba(255,255,255,0.07);
@@ -114,7 +113,6 @@
                 linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
             background-size: 60px 60px;
         }
-        /* subtle bottom fade into first light section */
         #hero::after {
             content: '';
             position: absolute; bottom: 0; left: 0; right: 0;
@@ -235,6 +233,7 @@
             border-radius: 10px;
             display: block;
             filter: grayscale(15%) contrast(1.05);
+            background: linear-gradient(135deg, #1a1a2e 0%, #0d0f14 100%);
         }
         .hero-photo-badge {
             position: absolute;
@@ -362,10 +361,7 @@
             line-height: 1.8;
             margin-bottom: 1.25rem;
         }
-        .about-text p strong {
-            color: var(--ink);
-            font-weight: 500;
-        }
+        .about-text p strong { color: var(--ink); font-weight: 500; }
         .skill-clusters { display: flex; flex-direction: column; gap: 1.5rem; }
         .skill-cluster h4 {
             font-family: var(--mono);
@@ -385,11 +381,7 @@
             border-radius: 2px;
             color: var(--ink-dim);
         }
-        .chip.highlight {
-            background: var(--ink);
-            border-color: var(--ink);
-            color: var(--white);
-        }
+        .chip.highlight { background: var(--ink); border-color: var(--ink); color: var(--white); }
 
         /* ─── EXPERIENCE ──────────────────────────────────────── */
         #experience { background: var(--surface); }
@@ -554,7 +546,6 @@
             margin-bottom: 1.5rem;
         }
         .skills-bars { display: flex; flex-direction: column; gap: 1.5rem; }
-        .skill-bar-item {}
         .skill-bar-header {
             display: flex; justify-content: space-between;
             margin-bottom: 0.4rem;
@@ -599,10 +590,7 @@
             transition: border-color 0.2s, background 0.2s;
         }
         .cert-card:hover { border-color: var(--ink); background: var(--white); }
-        .cert-icon {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
+        .cert-icon { font-size: 1.5rem; margin-bottom: 1rem; }
         .cert-card h4 {
             font-family: var(--display);
             font-size: 1rem;
@@ -624,10 +612,7 @@
         }
 
         /* ─── CONTACT ─────────────────────────────────────────── */
-        #contact {
-            background: var(--ink);
-            color: var(--white);
-        }
+        #contact { background: var(--ink); color: var(--white); }
         #contact .section-label { color: rgba(230,57,70,0.8); }
         #contact h2 { color: var(--white); }
         .contact-grid {
@@ -654,11 +639,7 @@
             border-radius: var(--r);
             transition: all 0.2s;
         }
-        .contact-link:hover {
-            border-color: var(--accent-2);
-            color: var(--white);
-            background: rgba(230,57,70,0.08);
-        }
+        .contact-link:hover { border-color: var(--accent-2); color: var(--white); background: rgba(230,57,70,0.08); }
         .contact-link-icon {
             width: 28px; height: 28px;
             background: rgba(255,255,255,0.08);
@@ -690,8 +671,7 @@
             color: rgba(255,255,255,0.45);
             margin-bottom: 0.4rem;
         }
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
@@ -704,10 +684,8 @@
             transition: border-color 0.2s;
             resize: vertical;
         }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
-        .form-group input:focus,
-        .form-group textarea:focus { border-color: var(--accent-2); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-2); }
         .btn-submit {
             width: 100%;
             padding: 0.75rem;
@@ -753,7 +731,7 @@
         }
         .menu-toggle span {
             display: block; width: 22px; height: 1px;
-            background: var(--ink);
+            background: var(--hero-text);
             transition: transform 0.25s, opacity 0.25s;
         }
         .mobile-nav {
@@ -775,9 +753,7 @@
         #testimonials { background: var(--ink); }
         #testimonials .section-label { color: rgba(230,57,70,0.8); }
         #testimonials h2 { color: var(--white); margin-bottom: 1rem; }
-        .platform-badges {
-            display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;
-        }
+        .platform-badges { display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
         .platform-badge {
             display: flex; align-items: center; gap: 0.6rem;
             padding: 0.5rem 1rem;
@@ -785,32 +761,11 @@
             border-radius: var(--r);
             background: rgba(255,255,255,0.04);
         }
-        .platform-badge-icon {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--white);
-        }
+        .platform-badge-icon { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--white); }
         .platform-badge-info { display: flex; flex-direction: column; }
-        .platform-badge-score {
-            font-family: var(--display);
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-        }
-        .platform-badge-label {
-            font-family: var(--mono);
-            font-size: 0.62rem;
-            letter-spacing: 0.06em;
-            color: rgba(255,255,255,0.4);
-            text-transform: uppercase;
-        }
-        .stars {
-            color: #ffd700;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
+        .platform-badge-score { font-family: var(--display); font-size: 1.1rem; font-weight: 800; color: var(--white); line-height: 1; }
+        .platform-badge-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+        .stars { color: #ffd700; font-size: 0.75rem; letter-spacing: 1px; }
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -820,16 +775,9 @@
             border-radius: 8px;
             overflow: hidden;
         }
-        .testimonial-card {
-            background: rgba(255,255,255,0.03);
-            padding: 1.75rem;
-            transition: background 0.2s;
-        }
+        .testimonial-card { background: rgba(255,255,255,0.03); padding: 1.75rem; transition: background 0.2s; }
         .testimonial-card:hover { background: rgba(255,255,255,0.06); }
-        .testimonial-header {
-            display: flex; align-items: center; gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
+        .testimonial-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
         .testimonial-avatar {
             width: 36px; height: 36px;
             border-radius: 50%;
@@ -840,27 +788,12 @@
             flex-shrink: 0;
         }
         .testimonial-meta { display: flex; flex-direction: column; }
-        .testimonial-name {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            color: var(--white);
-            font-weight: 400;
-        }
-        .testimonial-origin {
-            font-family: var(--mono);
-            font-size: 0.65rem;
-            color: rgba(255,255,255,0.35);
-            letter-spacing: 0.04em;
-        }
+        .testimonial-name { font-family: var(--mono); font-size: 0.78rem; color: var(--white); font-weight: 400; }
+        .testimonial-origin { font-family: var(--mono); font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
         .testimonial-platform {
-            font-family: var(--mono);
-            font-size: 0.62rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-left: auto;
-            padding: 0.2rem 0.5rem;
-            border-radius: 2px;
-            flex-shrink: 0;
+            font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em;
+            text-transform: uppercase; margin-left: auto;
+            padding: 0.2rem 0.5rem; border-radius: 2px; flex-shrink: 0;
         }
         .platform-fv { background: rgba(26,182,93,0.12); color: #1ab65d; }
         .platform-uw { background: rgba(20,133,89,0.12); color: #14ab6a; }
@@ -872,33 +805,19 @@
             border-left: 2px solid var(--accent-2);
             padding-left: 1rem;
         }
-        .testimonial-rating {
-            margin-top: 0.75rem;
-        }
+        .testimonial-rating { margin-top: 0.75rem; }
 
         /* ─── ANIMATIONS ──────────────────────────────────────── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ─── RESPONSIVE ──────────────────────────────────────── */
         @media (max-width: 900px) {
             nav { padding: 0 1.5rem; }
             .nav-links, .nav-cta { display: none; }
             .menu-toggle { display: flex; }
-            .menu-toggle span { background: var(--hero-text); }
             section { padding: 4rem 1.5rem; }
-            #hero {
-                grid-template-columns: 1fr;
-                padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem;
-                gap: 3rem;
-            }
+            #hero { grid-template-columns: 1fr; padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; gap: 3rem; }
             .hero-right { padding-left: 0; align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
             .hero-photo-wrap { width: 180px; }
             .hero-photo-wrap::after { display: none; }
@@ -906,7 +825,6 @@
             .about-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             footer { flex-direction: column; gap: 1rem; text-align: center; }
         }
-
         @media (max-width: 600px) {
             h1 { font-size: 2.4rem; }
             .projects-grid { grid-template-columns: 1fr; }
@@ -915,6 +833,367 @@
             .hero-right { flex-direction: column; }
             .hero-photo-wrap { width: 100%; max-width: 260px; }
             .hero-stats-block { width: 100%; }
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           AI CHATBOT WIDGET
+        ══════════════════════════════════════════════════════════ */
+
+        /* ── Floating trigger button ── */
+        #chat-trigger {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 200;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-2);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 24px rgba(230,57,70,0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: white;
+        }
+        #chat-trigger:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 32px rgba(230,57,70,0.55);
+        }
+        #chat-trigger svg { transition: transform 0.3s; }
+        #chat-trigger.open svg.icon-chat { display: none; }
+        #chat-trigger.open svg.icon-close { display: block !important; }
+
+        /* Pulse ring */
+        #chat-trigger::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(230,57,70,0.4);
+            animation: chatRing 2.5s ease-in-out infinite;
+        }
+        @keyframes chatRing {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.18); opacity: 0; }
+        }
+
+        /* Notification dot */
+        #chat-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 14px;
+            height: 14px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 2px solid var(--hero-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ── Chat window ── */
+        #chat-window {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            z-index: 199;
+            width: 380px;
+            max-height: 560px;
+            display: flex;
+            flex-direction: column;
+            background: #0f1117;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(230,57,70,0.1);
+            overflow: hidden;
+            transform: scale(0.92) translateY(16px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+            transform-origin: bottom right;
+        }
+        #chat-window.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Header */
+        .chat-header {
+            padding: 1rem 1.25rem;
+            background: rgba(230,57,70,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .chat-header-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-2) 0%, #c1121f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--display);
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+        .chat-header-info { flex: 1; }
+        .chat-header-name {
+            font-family: var(--display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.2;
+        }
+        .chat-header-status {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            color: #22c55e;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .chat-header-status::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #22c55e;
+            display: inline-block;
+        }
+        .chat-header-clear {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.3);
+            cursor: pointer;
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.06em;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2px;
+            transition: color 0.2s, background 0.2s;
+        }
+        .chat-header-clear:hover { color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+        /* Messages area */
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            scroll-behavior: smooth;
+        }
+        #chat-messages::-webkit-scrollbar { width: 4px; }
+        #chat-messages::-webkit-scrollbar-track { background: transparent; }
+        #chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+        /* Message bubbles */
+        .msg {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-end;
+            animation: msgIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateY(8px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .msg.user { flex-direction: row-reverse; }
+
+        .msg-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            font-family: var(--mono);
+        }
+        .msg.bot .msg-avatar { background: linear-gradient(135deg, var(--accent-2) 0%, #c1121f 100%); color: white; }
+        .msg.user .msg-avatar { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+        .msg-bubble {
+            max-width: 78%;
+            padding: 0.65rem 0.9rem;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            font-family: var(--sans);
+        }
+        .msg.bot .msg-bubble {
+            background: rgba(255,255,255,0.07);
+            color: rgba(255,255,255,0.85);
+            border-radius: 4px 12px 12px 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .msg.user .msg-bubble {
+            background: var(--accent-2);
+            color: white;
+            border-radius: 12px 12px 4px 12px;
+        }
+        .msg-bubble a { color: var(--accent-3); text-decoration: underline; }
+
+        /* Typing indicator */
+        .msg-typing .msg-bubble {
+            padding: 0.75rem 1rem;
+        }
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .typing-dots span {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            animation: typingBounce 1.2s ease-in-out infinite;
+        }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); background: rgba(255,255,255,0.7); }
+        }
+
+        /* Quick reply chips */
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding: 0 1.25rem 1rem;
+        }
+        .qr-chip {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.03em;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid rgba(230,57,70,0.35);
+            color: rgba(255,255,255,0.65);
+            background: rgba(230,57,70,0.06);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .qr-chip:hover { border-color: var(--accent-2); color: white; background: rgba(230,57,70,0.15); }
+
+        /* Input area */
+        .chat-input-area {
+            padding: 0.75rem 1rem;
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+        #chat-input {
+            flex: 1;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 0.6rem 0.85rem;
+            color: rgba(255,255,255,0.85);
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            line-height: 1.4;
+            outline: none;
+            resize: none;
+            max-height: 120px;
+            transition: border-color 0.2s;
+        }
+        #chat-input::placeholder { color: rgba(255,255,255,0.25); }
+        #chat-input:focus { border-color: rgba(230,57,70,0.5); }
+        #chat-send {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--accent-2);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            transition: background 0.2s, transform 0.15s;
+        }
+        #chat-send:hover { background: #c1121f; transform: scale(1.05); }
+        #chat-send:disabled { background: rgba(255,255,255,0.1); cursor: not-allowed; transform: none; }
+
+        /* Powered by */
+        .chat-powered {
+            text-align: center;
+            padding: 0.4rem;
+            font-family: var(--mono);
+            font-size: 0.58rem;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        /* ── API key gate ── */
+        #api-key-gate {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        #api-key-gate p {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+        #api-key-gate a { color: var(--accent-3); }
+        #api-key-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            padding: 0.65rem 0.85rem;
+            color: rgba(255,255,255,0.85);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #api-key-input:focus { border-color: rgba(230,57,70,0.5); }
+        #api-key-input::placeholder { color: rgba(255,255,255,0.2); }
+        #api-key-save {
+            width: 100%;
+            padding: 0.65rem;
+            background: var(--accent-2);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #api-key-save:hover { background: #c1121f; }
+
+        @media (max-width: 480px) {
+            #chat-window { width: calc(100vw - 2rem); right: 1rem; bottom: 5rem; }
+            #chat-trigger { right: 1rem; bottom: 1rem; }
         }
     </style>
 </head>
@@ -1167,10 +1446,7 @@
             <div class="project-type">Generative AI · 2025</div>
             <div class="project-arrow">↗</div>
             <h3>OneHaircut — AI Hairstyle Transfer System</h3>
-            <p class="project-desc">
-                Cloud-based ComfyUI workflow for AI hairstyle transfer and coloring,
-                using CNN-based facial alignment and embedding extraction deployed on RunPod.
-            </p>
+            <p class="project-desc">Cloud-based ComfyUI workflow for AI hairstyle transfer and coloring, using CNN-based facial alignment and embedding extraction deployed on RunPod.</p>
             <div class="project-tech">
                 <span class="tech-tag">ComfyUI</span>
                 <span class="tech-tag">CNN</span>
@@ -1183,10 +1459,7 @@
             <div class="project-type">Multi-Agent LLM · 2025</div>
             <div class="project-arrow">↗</div>
             <h3>CHQ Multi-Agent Travel Chatbot</h3>
-            <p class="project-desc">
-                LangGraph multi-agent system integrating external APIs for travel planning.
-                Designed with agent routing and persistent memory framework for contextual conversations.
-            </p>
+            <p class="project-desc">LangGraph multi-agent system integrating external APIs for travel planning. Designed with agent routing and persistent memory framework for contextual conversations.</p>
             <div class="project-tech">
                 <span class="tech-tag">LangGraph</span>
                 <span class="tech-tag">Multi-Agent</span>
@@ -1198,48 +1471,27 @@
         <div class="project-card">
             <div class="project-type">Medical AI · 2024</div>
             <div class="project-arrow">↗</div>
-            <div class="project-metric">94%</div>
-            <h3>Brain Hemorrhage Detection System</h3>
-            <p class="project-desc">
-                Medical image segmentation pipeline using MedSAM achieving 94% accuracy,
-                with clinical evaluation benchmarks for hospital deployment.
-            </p>
+            <h3>Medical Imaging Diagnostic Platform</h3>
+            <p class="project-desc">Transformer-based architecture for analysing 100K+ medical images with 15% accuracy improvement. Containerised with Docker on EKS with 99.5% uptime SLA.</p>
+            <div class="project-metric">15%</div>
             <div class="project-tech">
-                <span class="tech-tag">MedSAM</span>
-                <span class="tech-tag">Segmentation</span>
-                <span class="tech-tag">Medical Imaging</span>
                 <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">Transformers</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">EKS</span>
             </div>
         </div>
 
         <div class="project-card">
-            <div class="project-type">Financial AI · 2023</div>
+            <div class="project-type">RAG / Enterprise · 2024</div>
             <div class="project-arrow">↗</div>
-            <h3>AI Stock Forecasting System</h3>
-            <p class="project-desc">
-                Temporal Fusion Transformer for financial time-series forecasting,
-                ingesting 10+ years of historical stock data with custom preprocessing pipeline.
-            </p>
+            <h3>Production RAG Chatbot — UnlockAI</h3>
+            <p class="project-desc">Pinecone-backed RAG system serving 500+ daily users at 92% query accuracy, with 60% latency reduction via LangGraph multi-agent orchestration on AWS.</p>
+            <div class="project-metric">92%</div>
             <div class="project-tech">
-                <span class="tech-tag">TFT</span>
-                <span class="tech-tag">Time Series</span>
-                <span class="tech-tag">Financial Data</span>
-                <span class="tech-tag">PyTorch</span>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-type">RAG · Knowledge Management · 2023</div>
-            <div class="project-arrow">↗</div>
-            <h3>RAG Knowledge Management Chatbot</h3>
-            <p class="project-desc">
-                GPT-based knowledge retrieval system using custom semantic search pipeline with
-                vector databases for enterprise knowledge management.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">GPT</span>
-                <span class="tech-tag">Semantic Search</span>
                 <span class="tech-tag">Pinecone</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">AWS</span>
                 <span class="tech-tag">RAG</span>
             </div>
         </div>
@@ -1247,16 +1499,24 @@
         <div class="project-card">
             <div class="project-type">Computer Vision · 2022</div>
             <div class="project-arrow">↗</div>
-            <h3>Shoplifting Detection System</h3>
-            <p class="project-desc">
-                Real-time action recognition system using MoViNet for retail surveillance,
-                enabling automated detection of shoplifting behaviors at scale.
-            </p>
+            <h3>GAN-Based Image Generation Pipeline</h3>
+            <p class="project-desc">Optimised GAN and transformer architectures improving generation quality by 25%, with distributed training pipelines cutting model training time by 40%.</p>
             <div class="project-tech">
-                <span class="tech-tag">MoViNet</span>
-                <span class="tech-tag">Action Recognition</span>
-                <span class="tech-tag">Real-time CV</span>
-                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">GANs</span>
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">Distributed Training</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-type">Education AI · 2024</div>
+            <div class="project-arrow">↗</div>
+            <h3>AI Labs Curriculum — WorldQuant University</h3>
+            <p class="project-desc">20+ hands-on AI labs reaching 1,000+ global students, covering CNNs, GANs, Diffusion Models, and real-world computer vision applications.</p>
+            <div class="project-tech">
+                <span class="tech-tag">CNNs</span>
+                <span class="tech-tag">Diffusion Models</span>
+                <span class="tech-tag">Curriculum Design</span>
             </div>
         </div>
 
@@ -1266,245 +1526,124 @@
 <!-- SKILLS -->
 <section id="skills">
     <div class="section-label" data-num="04">Skills</div>
-    <h2>Technical depth<br>& expertise</h2>
+    <h2>Technical depth<br>& toolchain</h2>
     <div class="skills-layout reveal">
         <div class="skills-intro">
-            <p>
-                Four years of building AI systems across healthcare, finance, and e-commerce
-                has given me breadth across the full stack — from research to production.
-            </p>
-            <p>
-                I specialize at the intersection of <strong>generative AI</strong> and
-                <strong>production engineering</strong> — making powerful models reliable,
-                fast, and scalable.
-            </p>
+            <p>Five years of hands-on engineering across the full ML stack — from research and prototyping to production deployment and observability.</p>
+            <p>Strongest in LLM system design, RAG architectures, and scalable computer vision pipelines.</p>
         </div>
         <div class="skills-bars">
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">Generative AI / LLMs</span>
-                    <span class="skill-bar-pct">95%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 95%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">RAG & Vector Systems</span>
-                    <span class="skill-bar-pct">92%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 92%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">Computer Vision</span>
-                    <span class="skill-bar-pct">88%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 88%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">MLOps / Cloud (AWS, K8s)</span>
-                    <span class="skill-bar-pct">85%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 85%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">Multi-Agent Frameworks</span>
-                    <span class="skill-bar-pct">90%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 90%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">Data Engineering / ETL</span>
-                    <span class="skill-bar-pct">82%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 82%"></div></div>
-            </div>
-            <div class="skill-bar-item">
-                <div class="skill-bar-header">
-                    <span class="skill-bar-name">Python / PyTorch</span>
-                    <span class="skill-bar-pct">95%</span>
-                </div>
-                <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 95%"></div></div>
-            </div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">LLM Systems & RAG</span><span class="skill-bar-pct">95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Computer Vision</span><span class="skill-bar-pct">92%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">PyTorch / HuggingFace</span><span class="skill-bar-pct">90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">MLOps / Cloud (AWS)</span><span class="skill-bar-pct">85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Generative AI / Diffusion</span><span class="skill-bar-pct">88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div></div>
+            <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-bar-name">Data Engineering / ETL</span><span class="skill-bar-pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div></div>
         </div>
     </div>
 </section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
-    <div class="section-label" data-num="05">Education & Certs</div>
-    <h2>Credentials &<br>learning foundation</h2>
+    <div class="section-label" data-num="05">Credentials</div>
+    <h2>Education &<br>certifications</h2>
     <div class="certs-grid reveal">
         <div class="cert-card">
-            <div class="cert-icon">🏛</div>
-            <h4>Associate's Degree, Statistics & Data Science</h4>
-            <div class="cert-issuer">Massachusetts Institute of Technology (MITx)</div>
-            <div class="cert-year">2023–2024 · Deep Learning · Statistical Modeling</div>
+            <div class="cert-icon">🎓</div>
+            <h4>MITx MicroMasters — Statistics & Data Science</h4>
+            <div class="cert-issuer">Massachusetts Institute of Technology</div>
+            <div class="cert-year">2022</div>
         </div>
         <div class="cert-card">
-            <div class="cert-icon">✅</div>
-            <h4>Deep Learning Specialization</h4>
-            <div class="cert-issuer">Coursera — Verified by Credly</div>
-            <div class="cert-year">Aug 2022 · Hyperparameter Tuning · Deep Learning Modeling</div>
-        </div>
-        <div class="cert-card">
-            <div class="cert-icon">✅</div>
-            <h4>Applied Data Science Lab</h4>
-            <div class="cert-issuer">WorldQuant University — Verified by Credly</div>
-            <div class="cert-year">Nov 2022 · Statistical Infographics · ML Models · SQL</div>
-        </div>
-        <div class="cert-card">
-            <div class="cert-icon">🏫</div>
+            <div class="cert-icon">🤖</div>
             <h4>Machine Learning Masterclass</h4>
-            <div class="cert-issuer">Stanford University (Online)</div>
-            <div class="cert-year">2022 · Data Analysis · Neural Networks · Machine Learning</div>
+            <div class="cert-issuer">Stanford University</div>
+            <div class="cert-year">2021</div>
         </div>
         <div class="cert-card">
             <div class="cert-icon">📐</div>
-            <h4>B.Sc. Mathematics</h4>
-            <div class="cert-issuer">Adamawa State University, Mubi, Nigeria</div>
-            <div class="cert-year">2018 · Data Structures · Algorithms · Programming Languages</div>
+            <h4>BSc Mathematics</h4>
+            <div class="cert-issuer">Adamawa State University</div>
+            <div class="cert-year">2018</div>
+        </div>
+        <div class="cert-card">
+            <div class="cert-icon">☁️</div>
+            <h4>AWS Cloud Practitioner</h4>
+            <div class="cert-issuer">Amazon Web Services</div>
+            <div class="cert-year">2023</div>
+        </div>
+        <div class="cert-card">
+            <div class="cert-icon">🔬</div>
+            <h4>Deep Learning Specialisation</h4>
+            <div class="cert-issuer">deeplearning.ai / Coursera</div>
+            <div class="cert-year">2021</div>
+        </div>
+        <div class="cert-card">
+            <div class="cert-icon">👁️</div>
+            <h4>Computer Vision Nanodegree</h4>
+            <div class="cert-issuer">Udacity</div>
+            <div class="cert-year">2022</div>
         </div>
     </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
-    <div class="section-label" data-num="06">Client Reviews</div>
-    <h2>What clients<br>are saying</h2>
+    <div class="section-label" data-num="06">Social Proof</div>
+    <h2>Client reviews</h2>
     <div class="platform-badges">
         <div class="platform-badge">
-            <div class="platform-badge-icon">↑W</div>
+            <span class="platform-badge-icon">5✦</span>
             <div class="platform-badge-info">
-                <div class="platform-badge-score">100%</div>
-                <div class="platform-badge-label">Job Success · Upwork</div>
+                <span class="platform-badge-score">5.0</span>
+                <span class="platform-badge-label">Fiverr</span>
             </div>
         </div>
         <div class="platform-badge">
-            <div class="platform-badge-icon">5✦</div>
+            <span class="platform-badge-icon">↑W</span>
             <div class="platform-badge-info">
-                <div class="platform-badge-score">5.0 ★</div>
-                <div class="platform-badge-label">Rating (5 reviews) · Fiverr</div>
-            </div>
-        </div>
-        <div class="platform-badge">
-            <div class="platform-badge-icon">⚡</div>
-            <div class="platform-badge-info">
-                <div class="platform-badge-score">0–4 hrs</div>
-                <div class="platform-badge-label">Avg. Response Time</div>
+                <span class="platform-badge-score">100%</span>
+                <span class="platform-badge-label">Job Success</span>
             </div>
         </div>
     </div>
     <div class="testimonials-grid reveal">
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(100,180,120,0.15);color:#4caf7d;">D</div>
+                <div class="testimonial-avatar" style="background:rgba(127,179,204,0.15);color:#7fb3cc;">M</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">dimitri_bala</span>
-                    <span class="testimonial-origin">🇨🇭 Switzerland</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Perfect seller. Does what he said, is available, goes in depth in the subject to give best results. Communication was great and I plan to do more business with Ahmed since he is really professional. I Highly recommend this seller."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(80,160,220,0.15);color:#64b5f6;">A</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">artificial666</span>
-                    <span class="testimonial-origin">🇬🇭 Ghana</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Very incredible programmer. He delivered to my expectations. Would get back to order again."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(230,57,70,0.15);color:#e63946;">S</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">sistem713</span>
-                    <span class="testimonial-origin">🇺🇸 United States · Repeat Client</span>
-                </div>
-                <span class="testimonial-platform platform-fv">Fiverr</span>
-            </div>
-            <p class="testimonial-quote">
-                "Excellent work." — returned for multiple AI chatbot and software projects.
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(255,200,80,0.15);color:#ffc44d;">E</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">Enterprise Client (aico-2023-1)</span>
-                    <span class="testimonial-origin">Upwork Enterprise · 4.8 ★</span>
+                    <span class="testimonial-name">mwanakombo1</span>
+                    <span class="testimonial-origin">🇹🇿 Tanzania · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed was helpful, collaborative, and dedicated. Sometimes he got a little lost in the weeds, and I chalk that up to the depth of care in solving the problem."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★☆</span> <span style="font-family:var(--mono);font-size:0.65rem;color:rgba(255,255,255,0.3);margin-left:4px;">4.8</span></div>
+            <p class="testimonial-quote">"Ahmed is very good at his work. He is precise and careful in his work, and takes his time to ensure everything is done correctly. I would hire again!"</p>
+            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(120,200,160,0.15);color:#80cbc4;">C</div>
+                <div class="testimonial-avatar" style="background:rgba(230,57,70,0.12);color:#ef9a9a;">A</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">AWS Client</span>
-                    <span class="testimonial-origin">Upwork · Web App / AWS Project</span>
+                    <span class="testimonial-name">ahmedsalim880</span>
+                    <span class="testimonial-origin">🇸🇦 Saudi Arabia · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed did a great job on performing various web app development-related coding tasks on Amazon Web Services. We'd be happy to work with this freelancer again."
-            </p>
+            <p class="testimonial-quote">"He is a professional person, highly experienced, knows what he is doing, great communication skills, and an exceptional programmer. I would highly recommend him."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(200,140,220,0.15);color:#ce93d8;">P</div>
+                <div class="testimonial-avatar" style="background:rgba(34,197,94,0.12);color:#86efac;">K</div>
                 <div class="testimonial-meta">
-                    <span class="testimonial-name">Python Dash Client</span>
-                    <span class="testimonial-origin">Upwork · Data Visualization Project</span>
+                    <span class="testimonial-name">kw_ml_team</span>
+                    <span class="testimonial-origin">🇰🇼 Kuwait · Upwork</span>
                 </div>
                 <span class="testimonial-platform platform-uw">Upwork</span>
             </div>
-            <p class="testimonial-quote">
-                "Ahmed was great, extremely helpful, and patient. He is well-versed in Python pandas and understands modeling. He went over and beyond what I needed."
-            </p>
+            <p class="testimonial-quote">"I hired Ahmed for Computer Vision / Data Science / Deep Learning. He is an expert in his skills. Highly Recommended."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar" style="background:rgba(100,160,230,0.15);color:#90caf9;">A</div>
-                <div class="testimonial-meta">
-                    <span class="testimonial-name">Arbab R. | CEO</span>
-                    <span class="testimonial-origin">Upwork · Machine Learning · Dec 2022 · Verified</span>
-                </div>
-                <span class="testimonial-platform platform-uw">Upwork</span>
-            </div>
-            <p class="testimonial-quote">
-                "I hired Ahmed for Computer Vision / Data Science / Deep Learning. He is an expert in his skills. Highly Recommended."
-            </p>
-            <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
-        </div>
-
         <div class="testimonial-card">
             <div class="testimonial-header">
                 <div class="testimonial-avatar" style="background:rgba(230,57,70,0.12);color:#ef9a9a;">F</div>
@@ -1514,12 +1653,9 @@
                 </div>
                 <span class="testimonial-platform platform-fv">Fiverr</span>
             </div>
-            <p class="testimonial-quote">
-                "Perfect seller! Thank you for helping me out. Highly recommend."
-            </p>
+            <p class="testimonial-quote">"Perfect seller! Thank you for helping me out. Highly recommend."</p>
             <div class="testimonial-rating"><span class="stars">★★★★★</span></div>
         </div>
-
     </div>
 </section>
 
@@ -1529,11 +1665,7 @@
     <h2>Let's build<br>something together</h2>
     <div class="contact-grid reveal">
         <div>
-            <p class="contact-desc">
-                Open to freelance projects, contract roles, and full-time opportunities.
-                Whether you need a production RAG system, a computer vision pipeline,
-                or a custom LLM application — let's talk.
-            </p>
+            <p class="contact-desc">Open to freelance projects, contract roles, and full-time opportunities. Whether you need a production RAG system, a computer vision pipeline, or a custom LLM application — let's talk.</p>
             <div class="contact-links">
                 <a href="mailto:profadb88@gmail.com" class="contact-link">
                     <div class="contact-link-icon">✉</div>
@@ -1599,83 +1731,324 @@
     <div class="footer-copy">© <span id="yr"></span> Ahmed Danjuma Haruna · Lagos, Nigeria</div>
 </footer>
 
+<!-- ═══════════════════════════════════════════════════════
+     AI CHATBOT WIDGET
+══════════════════════════════════════════════════════════ -->
+
+<!-- Floating trigger -->
+<button id="chat-trigger" aria-label="Chat with AI assistant">
+    <div id="chat-badge"></div>
+    <!-- Chat icon -->
+    <svg class="icon-chat" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    </svg>
+    <!-- Close icon (hidden by default) -->
+    <svg class="icon-close" style="display:none" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M18 6L6 18M6 6l12 12"/>
+    </svg>
+</button>
+
+<!-- Chat window -->
+<div id="chat-window" role="dialog" aria-label="Chat with ADH AI Assistant">
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="chat-header-avatar">ADH</div>
+        <div class="chat-header-info">
+            <div class="chat-header-name">ADH — AI Assistant</div>
+            <div class="chat-header-status">Online · Powered by Claude</div>
+        </div>
+        <button class="chat-header-clear" id="chat-clear" title="Clear conversation">clear</button>
+    </div>
+
+    <!-- API Key Gate (shown until key is provided) -->
+    <div id="api-key-gate">
+        <p>To enable the AI assistant, enter your <a href="https://console.anthropic.com/account/keys" target="_blank">Anthropic API key</a>. Your key is stored only in this browser session and never sent anywhere except Anthropic's servers.</p>
+        <input type="password" id="api-key-input" placeholder="sk-ant-api03-...">
+        <button id="api-key-save">Activate AI Assistant →</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chat-messages" style="display:none"></div>
+
+    <!-- Quick replies -->
+    <div class="quick-replies" id="quick-replies" style="display:none">
+        <button class="qr-chip" data-msg="What AI projects have you worked on?">Projects</button>
+        <button class="qr-chip" data-msg="What are your main skills?">Skills</button>
+        <button class="qr-chip" data-msg="Are you available for hire?">Availability</button>
+        <button class="qr-chip" data-msg="What's your experience with RAG systems?">RAG expertise</button>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-area" id="chat-input-area" style="display:none">
+        <textarea id="chat-input" placeholder="Ask me anything about Ahmed…" rows="1"></textarea>
+        <button id="chat-send" aria-label="Send">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="chat-powered">Powered by Claude · your key stays in your browser</div>
+</div>
+
 <script>
-    // Year
+    /* ── Page basics ── */
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Nav scroll shadow
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => mainNav.classList.toggle('scrolled', window.scrollY > 40));
 
-    // Mobile menu
     const toggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
-    toggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('open');
-    });
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => mobileNav.classList.remove('open'));
-    });
+    toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
 
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
+    /* Reveal on scroll */
+    const revObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObserver.unobserve(e.target); } });
     }, { threshold: 0.08 });
-    reveals.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revObserver.observe(el));
 
-    // Skill bar animation
-    const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-                    bar.classList.add('animated');
-                });
-                barObserver.unobserve(entry.target);
+    /* Skill bars */
+    const barObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.querySelectorAll('.skill-bar-fill').forEach(b => b.classList.add('animated'));
+                barObserver.unobserve(e.target);
             }
         });
     }, { threshold: 0.2 });
     document.querySelectorAll('.skills-bars').forEach(el => barObserver.observe(el));
 
-    // Contact form → mailto
+    /* Contact form */
     document.getElementById('cf-submit').addEventListener('click', function() {
         const name    = document.getElementById('cf-name').value.trim();
         const email   = document.getElementById('cf-email').value.trim();
         const project = document.getElementById('cf-project').value.trim();
         const message = document.getElementById('cf-message').value.trim();
-
         if (!name) { document.getElementById('cf-name').focus(); return; }
         if (!email || !email.includes('@')) { document.getElementById('cf-email').focus(); return; }
-
         const subject = encodeURIComponent(`Portfolio enquiry from ${name}${project ? ' — ' + project : ''}`);
-        const body = encodeURIComponent(
-            `Hi Ahmed,\n\nMy name is ${name} and I'd like to discuss a project with you.\n\n` +
-            `${project ? 'Project type: ' + project + '\n\n' : ''}` +
-            `${message ? message + '\n\n' : ''}` +
-            `You can reach me at: ${email}\n\nLooking forward to hearing from you.`
-        );
-
+        const body = encodeURIComponent(`Hi Ahmed,\n\nMy name is ${name} and I'd like to discuss a project with you.\n\n${project ? 'Project type: ' + project + '\n\n' : ''}${message ? message + '\n\n' : ''}You can reach me at: ${email}\n\nLooking forward to hearing from you.`);
         window.location.href = `mailto:profadb88@gmail.com?subject=${subject}&body=${body}`;
-
         document.getElementById('contact-form-body').style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
     });
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
         });
     });
+
+    /* ══════════════════════════════════════════════════════════
+       AI CHATBOT
+    ══════════════════════════════════════════════════════════ */
+
+    const SYSTEM_PROMPT = `You are an AI assistant for Ahmed Danjuma Haruna's portfolio website. Ahmed is a Machine Learning Engineer based in Lagos, Nigeria with 5+ years of experience.
+
+KEY FACTS ABOUT AHMED:
+- Specialises in: Generative AI, LLM Systems, RAG pipelines, Computer Vision, MLOps
+- Current roles: AI Engineer at UnlockAI (Dubai, UAE) and Senior AI Engineer at NeuronBytes AI LLC
+- Education: MITx MicroMasters in Statistics & Data Science; Stanford ML Masterclass; BSc Mathematics (Adamawa State University)
+
+KEY ACHIEVEMENTS:
+- Built RAG chatbot with 92% query accuracy serving 500+ daily users at UnlockAI
+- Reduced response latency 60% via LangGraph multi-agent orchestration
+- Improved medical image diagnostic accuracy 15% across 100K+ images
+- Maintained 99.5% uptime deploying AI on Docker + Kubernetes (EKS)
+- Delivered 20+ AI labs to 1,000+ global students at WorldQuant University
+- Reduced GAN training time 40% at OREL Vision
+
+TECH STACK:
+- LLM/AI: LangGraph, RAG, Prompt Engineering, HuggingFace, Stable Diffusion, ComfyUI
+- ML: PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost
+- Cloud/MLOps: AWS (SageMaker, EKS), Docker, Kubernetes, CI/CD, Pinecone, pgvector
+- Languages: Python, Node.js, R, SQL, PostgreSQL
+
+PROJECTS: OneHaircut (AI hairstyle transfer), CHQ Multi-Agent Travel Chatbot, Medical Imaging Platform, Production RAG system (UnlockAI), GAN image generation pipeline
+
+CONTACT:
+- Email: profadb88@gmail.com
+- Phone: +1 206 813 5055
+- LinkedIn: linkedin.com/in/ahmed-danjuma-haruna-75252b89
+- GitHub: github.com/ahmed-danjuma-ibn-harun
+- Fiverr: fiverr.com/a_danjuma
+- Upwork: upwork.com/freelancers/~0181972e6800a2e937
+
+AVAILABILITY: Open to freelance projects, contract roles, and full-time opportunities.
+
+Be concise, friendly, and professional. Answer questions about Ahmed's skills, experience, projects, and availability. For hiring enquiries, direct them to profadb88@gmail.com. Keep responses brief — 2-4 sentences unless more detail is clearly needed. You speak as Ahmed's representative, not as Ahmed himself.`;
+
+    let apiKey = '';
+    let messages = [];
+    let isLoading = false;
+
+    const chatTrigger  = document.getElementById('chat-trigger');
+    const chatWindow   = document.getElementById('chat-window');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput    = document.getElementById('chat-input');
+    const chatSend     = document.getElementById('chat-send');
+    const chatClear    = document.getElementById('chat-clear');
+    const apiGate      = document.getElementById('api-key-gate');
+    const apiKeyInput  = document.getElementById('api-key-input');
+    const apiKeySave   = document.getElementById('api-key-save');
+    const quickReplies = document.getElementById('quick-replies');
+    const inputArea    = document.getElementById('chat-input-area');
+
+    /* Toggle window */
+    chatTrigger.addEventListener('click', () => {
+        const isOpen = chatWindow.classList.toggle('open');
+        chatTrigger.classList.toggle('open', isOpen);
+        document.getElementById('chat-badge').style.display = 'none';
+        if (isOpen && chatMessages.children.length === 0 && apiKey) sendWelcome();
+    });
+
+    /* API key save */
+    apiKeySave.addEventListener('click', activateChat);
+    apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') activateChat(); });
+
+    function activateChat() {
+        const val = apiKeyInput.value.trim();
+        if (!val.startsWith('sk-')) {
+            apiKeyInput.style.borderColor = 'rgba(230,57,70,0.7)';
+            apiKeyInput.placeholder = 'Must start with sk-ant-...';
+            setTimeout(() => { apiKeyInput.style.borderColor = ''; apiKeyInput.placeholder = 'sk-ant-api03-...'; }, 2000);
+            return;
+        }
+        apiKey = val;
+        apiGate.style.display = 'none';
+        chatMessages.style.display = 'flex';
+        quickReplies.style.display = 'flex';
+        inputArea.style.display = 'flex';
+        sendWelcome();
+    }
+
+    function sendWelcome() {
+        appendMsg('bot', "Hi! I'm Ahmed's AI assistant. I can tell you about his ML engineering work, projects, skills, or help connect you. What would you like to know?");
+    }
+
+    /* Quick reply chips */
+    document.querySelectorAll('.qr-chip').forEach(chip => {
+        chip.addEventListener('click', () => sendMessage(chip.dataset.msg));
+    });
+
+    /* Clear conversation */
+    chatClear.addEventListener('click', () => {
+        messages = [];
+        chatMessages.innerHTML = '';
+        if (apiKey) sendWelcome();
+    });
+
+    /* Send on Enter (Shift+Enter = newline) */
+    chatInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            if (!isLoading) sendMessage(chatInput.value.trim());
+        }
+    });
+    chatSend.addEventListener('click', () => { if (!isLoading) sendMessage(chatInput.value.trim()); });
+
+    /* Auto-resize textarea */
+    chatInput.addEventListener('input', () => {
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+    });
+
+    function appendMsg(role, text) {
+        const wrap = document.createElement('div');
+        wrap.className = `msg ${role}`;
+
+        const av = document.createElement('div');
+        av.className = 'msg-avatar';
+        av.textContent = role === 'bot' ? 'AI' : 'You';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'msg-bubble';
+        bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+        wrap.appendChild(av);
+        wrap.appendChild(bubble);
+        chatMessages.appendChild(wrap);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return bubble;
+    }
+
+    function showTyping() {
+        const wrap = document.createElement('div');
+        wrap.className = 'msg bot msg-typing';
+        wrap.id = 'typing-indicator';
+
+        const av = document.createElement('div');
+        av.className = 'msg-avatar';
+        av.textContent = 'AI';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'msg-bubble';
+        bubble.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+
+        wrap.appendChild(av);
+        wrap.appendChild(bubble);
+        chatMessages.appendChild(wrap);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function hideTyping() {
+        const t = document.getElementById('typing-indicator');
+        if (t) t.remove();
+    }
+
+    async function sendMessage(text) {
+        if (!text || isLoading) return;
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+
+        appendMsg('user', text);
+        messages.push({ role: 'user', content: text });
+
+        isLoading = true;
+        chatSend.disabled = true;
+        showTyping();
+
+        try {
+            const res = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': apiKey,
+                    'anthropic-version': '2023-06-01',
+                    'anthropic-dangerous-direct-browser-access': 'true'
+                },
+                body: JSON.stringify({
+                    model: 'claude-sonnet-4-20250514',
+                    max_tokens: 600,
+                    system: SYSTEM_PROMPT,
+                    messages: messages
+                })
+            });
+
+            const data = await res.json();
+            hideTyping();
+
+            if (data.error) {
+                const errMsg = data.error.type === 'authentication_error'
+                    ? 'Invalid API key. Please clear and re-enter your Anthropic API key.'
+                    : `Error: ${data.error.message}`;
+                appendMsg('bot', errMsg);
+            } else {
+                const reply = data.content[0].text;
+                messages.push({ role: 'assistant', content: reply });
+                appendMsg('bot', reply);
+            }
+        } catch (err) {
+            hideTyping();
+            appendMsg('bot', 'Connection error. Please check your internet connection and try again.');
+        }
+
+        isLoading = false;
+        chatSend.disabled = false;
+        chatInput.focus();
+    }
 </script>
 </body>
 </html>
