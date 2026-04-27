@@ -1354,6 +1354,8 @@
             <span class="tag">Computer Vision</span>
             <span class="tag">RAG</span>
             <span class="tag">Multi-Agent AI</span>
+            <span class="tag">Edge AI</span>
+            <span class="tag">LLM Inference</span>
         </div>
         <div class="hero-actions">
             <a href="#projects" class="btn-primary">View Projects →</a>
@@ -1461,6 +1463,18 @@
                 </div>
             </div>
             <div class="skill-cluster">
+                <h4>Edge AI & LLM Inference</h4>
+                <div class="skill-chips">
+                    <span class="chip highlight">llama.cpp</span>
+                    <span class="chip highlight">TensorRT</span>
+                    <span class="chip highlight">ONNX Runtime</span>
+                    <span class="chip highlight">Model Quantization</span>
+                    <span class="chip">NVIDIA GPUs</span>
+                    <span class="chip">INT4/INT8</span>
+                    <span class="chip">GGUF</span>
+                </div>
+            </div>
+            <div class="skill-cluster">
                 <h4>Languages & Databases</h4>
                 <div class="skill-chips">
                     <span class="chip highlight">Python</span>
@@ -1546,6 +1560,39 @@
     <div class="section-label" data-num="03">Projects</div>
     <h2>Selected work<br>& key systems</h2>
     <div class="projects-grid reveal">
+
+        <div class="project-card">
+            <div class="project-type">Edge AI · Computer Vision · 2024</div>
+            <div class="project-arrow">↗</div>
+            <h3>Real-Time Shoplifting Detection System (Edge AI)</h3>
+            <p class="project-desc">
+                End-to-end computer vision system for detecting shoplifting behavior from CCTV streams. 
+                Built full pipeline from dataset creation and annotation to real-time edge deployment, 
+                processing RTSP camera feeds with batch inference and ultra-low latency alerts.
+            </p>
+
+            <div class="project-metric">Real-time 30 FPS</div>
+
+            <div class="project-tech">
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">MoViNet</span>
+                <span class="tech-tag">YOLO</span>
+                <span class="tech-tag">TensorRT</span>
+                <span class="tech-tag">ONNX</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">RTSP</span>
+                <span class="tech-tag">Edge AI</span>
+            </div>
+
+            <ul class="timeline-bullets" style="margin-top:1rem;">
+                <li>Designed and curated custom video dataset (10K+ normal vs 640 shoplifting clips), including manual balancing and preprocessing pipelines.</li>
+                <li>Trained action recognition model using MoViNet with optimized batching (50-frame windows) for temporal inference.</li>
+                <li>Reduced inference latency by converting PyTorch → ONNX → TensorRT with FP16/INT8 optimizations.</li>
+                <li>Built RTSP pipeline for live CCTV ingestion with real-time frame buffering and batch inferencing.</li>
+                <li>Deployed on edge device with GPU acceleration for continuous monitoring without cloud dependency.</li>
+                <li>Integrated alerting system via WhatsApp & Telegram APIs for instant incident notifications.</li>
+            </ul>
+        </div>
 
         <div class="project-card">
             <div class="project-type">Generative AI · 2025</div>
@@ -2060,6 +2107,7 @@ KEY ACHIEVEMENTS:
 
 TECH STACK:
 - LLM/AI: LangGraph, RAG, Prompt Engineering, HuggingFace, Stable Diffusion, ComfyUI
+- Edge AI & Inference: llama.cpp, TensorRT, ONNX Runtime, Model Quantization (INT4/INT8/GGUF), NVIDIA GPUs
 - ML: PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost
 - Cloud/MLOps: AWS (SageMaker, EKS), Docker, Kubernetes, CI/CD, Pinecone, pgvector
 - Languages: Python, Node.js, R, SQL, PostgreSQL
