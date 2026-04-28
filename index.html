@@ -1561,7 +1561,8 @@
     <h2>Selected work<br>& key systems</h2>
     <div class="projects-grid reveal">
 
-        <div class="project-card">
+        <div class="project-card" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+            <div>
             <div class="project-type">Edge AI · Computer Vision · 2024</div>
             <div class="project-arrow">↗</div>
             <h3>Real-Time Shoplifting Detection System (Edge AI)</h3>
@@ -1584,7 +1585,9 @@
                 <span class="tech-tag">Edge AI</span>
             </div>
 
-            <ul class="timeline-bullets" style="margin-top:1rem;">
+            </div>
+            <div>
+            <ul class="timeline-bullets" style="margin-top:0;">
                 <li>Designed and curated custom video dataset (10K+ normal vs 640 shoplifting clips), including manual balancing and preprocessing pipelines.</li>
                 <li>Trained action recognition model using MoViNet with optimized batching (50-frame windows) for temporal inference.</li>
                 <li>Reduced inference latency by converting PyTorch → ONNX → TensorRT with FP16/INT8 optimizations.</li>
@@ -1592,6 +1595,7 @@
                 <li>Deployed on edge device with GPU acceleration for continuous monitoring without cloud dependency.</li>
                 <li>Integrated alerting system via WhatsApp & Telegram APIs for instant incident notifications.</li>
             </ul>
+            </div>
         </div>
 
         <div class="project-card">
