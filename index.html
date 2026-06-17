@@ -2157,7 +2157,7 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
     chatClear.addEventListener('click', () => {
         messages = [];
         chatMessages.innerHTML = '';
-        if (apiKey) sendWelcome();
+        sendWelcome();
     });
 
     /* Send on Enter (Shift+Enter = newline) */
@@ -2243,7 +2243,7 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
             if (data.error) {
                 appendMsg('bot', data.error.message || 'Something went wrong. Please try again.');
             } else {
-                const reply = data.content[0].text;
+                const reply = data.choices[0].message.content;
                 messages.push({ role: 'assistant', content: reply });
                 appendMsg('bot', reply);
             }
