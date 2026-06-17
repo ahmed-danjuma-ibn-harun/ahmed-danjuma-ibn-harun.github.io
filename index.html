@@ -2009,18 +2009,11 @@
         <button class="chat-header-clear" id="chat-clear" title="Clear conversation">clear</button>
     </div>
 
-    <!-- API Key Gate (shown until key is provided) -->
-    <div id="api-key-gate">
-        <p>To enable the AI assistant, enter your <a href="https://console.anthropic.com/account/keys" target="_blank">Anthropic API key</a>. Your key is stored only in this browser session and never sent anywhere except Anthropic's servers.</p>
-        <input type="password" id="api-key-input" placeholder="sk-ant-api03-...">
-        <button id="api-key-save">Activate AI Assistant →</button>
-    </div>
-
     <!-- Messages -->
-    <div id="chat-messages" style="display:none"></div>
+    <div id="chat-messages"></div>
 
     <!-- Quick replies -->
-    <div class="quick-replies" id="quick-replies" style="display:none">
+    <div class="quick-replies" id="quick-replies">
         <button class="qr-chip" data-msg="What AI projects have you worked on?">Projects</button>
         <button class="qr-chip" data-msg="What are your main skills?">Skills</button>
         <button class="qr-chip" data-msg="Are you available for hire?">Availability</button>
@@ -2028,7 +2021,7 @@
     </div>
 
     <!-- Input -->
-    <div class="chat-input-area" id="chat-input-area" style="display:none">
+    <div class="chat-input-area" id="chat-input-area">
         <textarea id="chat-input" placeholder="Ask me anything about Ahmed…" rows="1"></textarea>
         <button id="chat-send" aria-label="Send">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -2130,7 +2123,7 @@ AVAILABILITY: Open to freelance projects, contract roles, and full-time opportun
 
 Be concise, friendly, and professional. Answer questions about Ahmed's skills, experience, projects, and availability. For hiring enquiries, direct them to profadb88@gmail.com. Keep responses brief — 2-4 sentences unless more detail is clearly needed. You speak as Ahmed's representative, not as Ahmed himself.`;
 
-    let apiKey = '';
+    const PROXY_URL = 'https://adh-chat-proxy.profadb88.workers.dev';  
     let messages = [];
     let isLoading = false;
 
@@ -2140,9 +2133,6 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
     const chatInput    = document.getElementById('chat-input');
     const chatSend     = document.getElementById('chat-send');
     const chatClear    = document.getElementById('chat-clear');
-    const apiGate      = document.getElementById('api-key-gate');
-    const apiKeyInput  = document.getElementById('api-key-input');
-    const apiKeySave   = document.getElementById('api-key-save');
     const quickReplies = document.getElementById('quick-replies');
     const inputArea    = document.getElementById('chat-input-area');
 
@@ -2151,28 +2141,8 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
         const isOpen = chatWindow.classList.toggle('open');
         chatTrigger.classList.toggle('open', isOpen);
         document.getElementById('chat-badge').style.display = 'none';
-        if (isOpen && chatMessages.children.length === 0 && apiKey) sendWelcome();
+        if (isOpen && chatMessages.children.length === 0) sendWelcome();
     });
-
-    /* API key save */
-    apiKeySave.addEventListener('click', activateChat);
-    apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') activateChat(); });
-
-    function activateChat() {
-        const val = apiKeyInput.value.trim();
-        if (!val.startsWith('sk-')) {
-            apiKeyInput.style.borderColor = 'rgba(230,57,70,0.7)';
-            apiKeyInput.placeholder = 'Must start with sk-ant-...';
-            setTimeout(() => { apiKeyInput.style.borderColor = ''; apiKeyInput.placeholder = 'sk-ant-api03-...'; }, 2000);
-            return;
-        }
-        apiKey = val;
-        apiGate.style.display = 'none';
-        chatMessages.style.display = 'flex';
-        quickReplies.style.display = 'flex';
-        inputArea.style.display = 'flex';
-        sendWelcome();
-    }
 
     function sendWelcome() {
         appendMsg('bot', "Hi! I'm Ahmed's AI assistant. I can tell you about his ML engineering work, projects, skills, or help connect you. What would you like to know?");
@@ -2261,30 +2231,17 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
         showTyping();
 
         try {
-            const res = await fetch('https://api.anthropic.com/v1/messages', {
+            const res = await fetch(PROXY_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-api-key': apiKey,
-                    'anthropic-version': '2023-06-01',
-                    'anthropic-dangerous-direct-browser-access': 'true'
-                },
-                body: JSON.stringify({
-                    model: 'claude-sonnet-4-20250514',
-                    max_tokens: 600,
-                    system: SYSTEM_PROMPT,
-                    messages: messages
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: messages })
             });
 
             const data = await res.json();
             hideTyping();
 
             if (data.error) {
-                const errMsg = data.error.type === 'authentication_error'
-                    ? 'Invalid API key. Please clear and re-enter your Anthropic API key.'
-                    : `Error: ${data.error.message}`;
-                appendMsg('bot', errMsg);
+                appendMsg('bot', data.error.message || 'Something went wrong. Please try again.');
             } else {
                 const reply = data.content[0].text;
                 messages.push({ role: 'assistant', content: reply });
