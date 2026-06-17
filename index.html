@@ -1007,7 +1007,7 @@
             right: 2rem;
             z-index: 199;
             width: 380px;
-            max-height: 560px;
+            max-height: min(560px, calc(100vh - 8rem));
             display: flex;
             flex-direction: column;
             background: #0f1117;
@@ -2004,7 +2004,7 @@
         <div class="chat-header-avatar">ADH</div>
         <div class="chat-header-info">
             <div class="chat-header-name">ADH — AI Assistant</div>
-            <div class="chat-header-status">Online · Powered by Claude</div>
+            <div class="chat-header-status">Online</div>
         </div>
         <button class="chat-header-clear" id="chat-clear" title="Clear conversation">clear</button>
     </div>
@@ -2029,7 +2029,6 @@
             </svg>
         </button>
     </div>
-    <div class="chat-powered">Powered by Claude · your key stays in your browser</div>
 </div>
 
 <script>
@@ -2243,7 +2242,7 @@ Be concise, friendly, and professional. Answer questions about Ahmed's skills, e
             if (data.error) {
                 appendMsg('bot', data.error.message || 'Something went wrong. Please try again.');
             } else {
-                const reply = data.choices[0].message.content;
+                const reply = data.choices[0].message.content.trim();
                 messages.push({ role: 'assistant', content: reply });
                 appendMsg('bot', reply);
             }
